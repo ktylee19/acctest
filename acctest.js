@@ -12,6 +12,12 @@ if (Meteor.isClient) {
     Data.insert({point: ax});
   }, false);
 
+  Template.hello.helpers({
+    data: function () {
+      return Data.find({});
+    }
+  });
+
   Template.hello.greeting = function () {
     return "Welcome to acctest.";
   };
