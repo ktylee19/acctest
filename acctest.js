@@ -15,7 +15,13 @@ if (Meteor.isClient) {
   Template.hello.helpers({
     data: function () {
       return Data.find({});
+    },
+    onePoint: function () {
+      //return Data.find({}, {sort:{ "createdAt": -1}})[0].point;
+      //return 0;
+      return Data.findOne({},{sort:{ "createdAt": -1}}).point;
     }
+
   });
 
   Template.hello.greeting = function () {
@@ -31,7 +37,8 @@ if (Meteor.isClient) {
       // template data, if any, is available in 'this'
       if (typeof console !== 'undefined')
         console.log("You pressed the button");
-        Data.insert({point:"hi"});
+        Data.insert({ point:"hi",
+                      createdAt: new Date() });
     }
   });
 }
