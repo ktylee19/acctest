@@ -1,5 +1,7 @@
+var Data = new Meteor.Collection("data");
+
 if (Meteor.isClient) {
-  var Data = new Meteor.Collection("data");
+  
   var ax = 0;
   var ay = 0;
   var sensitivity = 1;
