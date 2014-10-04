@@ -22,7 +22,8 @@ if (Meteor.isClient) {
     'click input': function () {
       // template data, if any, is available in 'this'
       if (typeof console !== 'undefined')
-        Data.insert({point:"hi"}));
+        console.log("You pressed the button");
+        Data.insert({point:"hi"});
     }
   });
 }
