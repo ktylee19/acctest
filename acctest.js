@@ -1,5 +1,5 @@
 if (Meteor.isClient) {
-  var Data = new Meteor.Collection("point");
+  var Data = new Meteor.Collection("data");
   var ax = 0;
   var ay = 0;
   var sensitivity = 1;
@@ -7,7 +7,7 @@ if (Meteor.isClient) {
   window.addEventListener('devicemotion', function (e) {
     ax = e.accelerationIncludingGravity.x * sensitivity;
     ay = -e.accelerationIncludingGravity.y * sensitivity;
-    Data.insert({data: data});
+    Data.insert({point: ax});
   }, false);
 
   Template.hello.greeting = function () {
@@ -22,7 +22,7 @@ if (Meteor.isClient) {
     'click input': function () {
       // template data, if any, is available in 'this'
       if (typeof console !== 'undefined')
-        console.log("You pressed the button");
+        Data.insert({point:"hi"}));
     }
   });
 }
