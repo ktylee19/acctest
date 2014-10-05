@@ -9,14 +9,19 @@
 <template name="hello">
   <h1>Hello World!</h1>
   {{greeting}}
-  <input type="button" value="Click" />
+  <input type="button" id="click" value="Click" />
+  <input type="button" id="clear" value="Clear" />
+  <input type="button" id="stop" value="StopListener" />
+  <input type="button" id="start" value="StartListener" />
 
-  {{onePoint}}
-<!--   {{#each data}}
+
+  <!-- {{onePoint}}, {{twoPoint}} -->
+  {{#each data}}
     <div>
-      {{point}}
+      {{ax}}, {{ay}}, {{t}}
+      Current Position: ({{dx}}, {{dy}})
     </div>
-  {{/each}} -->
+  {{/each}}
 
 </template>
 
