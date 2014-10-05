@@ -11,15 +11,16 @@
   {{greeting}}
   <input type="button" id="click" value="Click" />
   <input type="button" id="clear" value="Clear" />
-  <input type="button" id="stop" value="StopListener" />
+  <!-- <input type="button" id="stop" value="StopListener" />
   <input type="button" id="start" value="StartListener" />
-
+ -->
 
   <!-- {{onePoint}}, {{twoPoint}} -->
   {{#each data}}
     <div>
-      {{ax}}, {{ay}}, {{t}}
-      Current Position: ({{dx}}, {{dy}})
+      Acceleration: {{ax}}, {{ay}} //
+      Velocity: {{vx}}, {{vy}} // 
+      Current Position: ({{dx}}, {{dy}}) in {{t}} steps
     </div>
   {{/each}}
 
